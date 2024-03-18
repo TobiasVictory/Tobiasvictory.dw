@@ -3,6 +3,8 @@ body {
     background-color: beige;
     margin: 0;
     padding: 0;
+    position: relative;
+    min-height: 100vh
 }
 
 
@@ -15,11 +17,11 @@ header {
 .card-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; /* Otra opcion para el espacio entre las cards */
+    justify-content: space-between; 
 }
 
 .card {
-    flex: 0 0 calc(30% - 20px); /* Ajusta el ancho de cada card según tus necesidades */
+    flex: 0 0 calc(30% - 20px); 
     margin-bottom: 20px;
 }
 
@@ -62,13 +64,6 @@ header {
     width: 100%;
 }
 
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-
 .redes {
     text-align: center;
 }
@@ -78,6 +73,9 @@ footer {
     color: white;
     text-align: center;
     padding: 20px 0;
+    position: absolute; 
+    bottom: 0;
+    width: 100%;
 }
 
 .redes {
@@ -169,19 +167,75 @@ form input[type="submit"] {
 
 .info {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
 }
 
 .texto {
     flex: 1;
     text-align: center;
+    padding: 20px;
 }
 
 .imagen {
     flex: 1;
     text-align: center;
+    margin: 20px;
 }
 
 .imagen img {
     max-width: 100%;
     height: auto;
+}
+
+.carousel {
+    width: 50%; /* Ancho del carousel ajustado */
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-img {
+    display: flex;
+    width: 300%; 
+    animation: slide 10s infinite alternate; 
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    33.33% { transform: translateX(-100%); } 
+    66.66% { transform: translateX(-200%); } 
+    100% { transform: translateX(0); } 
+}
+
+img {
+    flex: 1 0 100%;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+button:hover {
+    color: #333;
+}
+
+.prev::after,
+.next::after {
+    content: "❯";
 }
