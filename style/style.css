@@ -253,78 +253,28 @@ form input[type="submit"]:focus {
 }
 
 /* Nosotros */
+.info { display: flex; justify-content: center; align-items: center; margin: 20px; }
 
-.info {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px;
-}
+.texto { flex: 1; text-align: center; padding: 20px; }
 
-.texto {
-    flex: 1;
-    text-align: center;
-    padding: 20px;
-}
+.imagen { flex: 1; text-align: center; margin: 20px; }
 
-.imagen {
-    flex: 1;
-    text-align: center;
-    margin: 20px;
-}
+.imagen img { width: 25px; height: 25px; }
 
-.imagen img {
-    max-width: 100%;
-    height: auto;
-}
+.carousel { width: 50%; margin: 0 auto; position: relative; overflow: hidden; }
 
-.carousel {
-    width: 50%; /* Ancho del carousel ajustado */
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
-}
+.carousel-img { display: flex; width: 75%; animation: slide 10s infinite alternate; }
 
-.carousel-img {
-    display: flex;
-    width: 300%; 
-    animation: slide 10s infinite alternate; 
-}
+@keyframes slide { 0% { transform: translateX(0); } 25% { transform: translateX(-100%); } 50% { transform: translateX(-200%); } 75% { transform: translateX(-300%); } 100% { transform: translateX(0); } }
 
-@keyframes slide {
-    0% { transform: translateX(0); }
-    33.33% { transform: translateX(-100%); } 
-    66.66% { transform: translateX(-200%); } 
-    100% { transform: translateX(0); } 
-}
+img { flex: 1 0 100%; }
 
-img {
-    flex: 1 0 100%;
-}
+button { position: absolute; top: 50%; transform: translateY(-50%); background: transparent; border: none; font-size: 2rem; cursor: pointer; }
 
-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: transparent;
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
-}
+.prev { left: 0; }
 
-.prev {
-    left: 0;
-}
+.next { right: 0; }
 
-.next {
-    right: 0;
-}
+button:hover { color: #333; }
 
-button:hover {
-    color: #333;
-}
-
-.prev::after,
-.next::after {
-    content: "❯";
-}
+.prev::after, .next::after { content: "❯"; }
